@@ -1,0 +1,9 @@
+{
+  "name": "gulp-wordpress",
+  "version": "1.0.0",
+  "description": "WordPress Theme Development Automation with Gulp",
+  "author": "Maya Fujiwara",
+  "devDependencies": {
+    "gulp": "^3.9.1"
+  }
+}
