@@ -141,3 +141,15 @@ require get_template_directory() . '/inc/customizer.php';
  * Load Jetpack compatibility file.
  */
 require get_template_directory() . '/inc/jetpack.php';
+
+
+function my_custom_init() {
+    register_post_type( 'portfolio', array(
+        'label' => 'Portfolio',
+        'public' => true,
+        'supports' => array( 'title', 'editor', 'author', 'thumbnail', 'excerpt', 'custom-fields' ,'comments' ),
+        'menu_position' => 5,
+        'has_archive' => true
+    ));
+}
+add_action( 'init', 'my_custom_init' );
