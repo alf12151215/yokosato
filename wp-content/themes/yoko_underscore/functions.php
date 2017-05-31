@@ -143,13 +143,57 @@ require get_template_directory() . '/inc/customizer.php';
 require get_template_directory() . '/inc/jetpack.php';
 
 
-function my_custom_init() {
+function my_portfolio() {
     register_post_type( 'portfolio', array(
         'label' => 'Portfolio',
         'public' => true,
         'supports' => array( 'title', 'editor', 'author', 'thumbnail', 'excerpt', 'custom-fields' ,'comments' ),
         'menu_position' => 5,
-        'has_archive' => true
+        'has_archive' => true,
+				// 'taxonomies' => array( 'portfolio','category' ),
     ));
 }
-add_action( 'init', 'my_custom_init' );
+add_action( 'init', 'my_portfolio' );
+
+add_action( 'init', 'create_portfolio_taxonomies', 0 );
+
+function create_portfolio_taxonomies()
+{
+  // Add new taxonomy, make it hierarchical (like categories)
+  $labels = array(
+    'name' => _x( 'Portfolio Types', 'taxonomy general name' ),
+    'singular_name' => _x( 'Portfolio Type', 'taxonomy singular name' ),
+    'search_items' =>  __( 'Search Portfolio Type' ),
+    'popular_items' => __( 'Popular Portfolio Type' ),
+    'all_items' => __( 'All Portfolio Types' ),
+    'parent_item' => __( 'Parent Portfolio Type' ),
+    'parent_item_colon' => __( 'Parent Recording:' ),
+    'edit_item' => __( 'Edit Portfolio Type' ),
+    'update_item' => __( 'Update Portfolio Type' ),
+    'add_new_item' => __( 'Add New Portfolio Type' ),
+    'new_item_name' => __( 'New Portfolio Type Name' ),
+  );
+  register_taxonomy('portfolio_type',array('portfolio'), array(
+    'hierarchical' => true,
+    'labels' => $labels,
+    'show_ui' => true,
+    'query_var' => true,
+    'rewrite' => array( 'slug' => 'portfolio_type' ),
+  ));
+}
+
+function my_bootstrap_scripts() {
+
+wp_enqueue_style( 'parent-style', get_template_directory_uri() . '/lib/bootstrap-3.3.2-dist/css/bootstrap.min.css');
+wp_enqueue_script( 'bootstrap-script', get_template_directory_uri() . '/lib/bootstrap-3.3.2-dist/js/bootstrap.min.js', array(), '1.0.0', true );
+}
+
+add_action( 'wp_enqueue_scripts', 'my_bootstrap_scripts' );
+
+
+function cherrypick_child_enqueue_css()
+{
+    wp_register_style( 'theme-stylesheet', get_stylesheet_uri());
+    wp_enqueue_style( 'theme-stylesheet' );
+}
+add_action( 'wp_enqueue_scripts', 'cherrypick_child_enqueue_css', 99 ); // using priority 99 we make sure the child theme style.css will be loaded after all other css
