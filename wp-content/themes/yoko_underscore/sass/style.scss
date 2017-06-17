@@ -6,3 +6,44 @@
 */
 
 @import "header";
+@import "footer";
+@import "archive";
+@import "single";
+@import "page";
+
+html {
+    position: relative;
+    min-height: 100%;
+}
+
+body {
+  font-family: 'Montserrat', sans-serif;
+  margin-bottom: 160px;
+}
+
+a {
+  color: #222;
+  &:active, &:focus {
+    text-decoration: none;
+    color: #222;
+  }
+  &:hover {
+    border-bottom: solid 2px rgba(23,4,29,0.2);
+    text-decoration: none;
+    color: #222;
+  }
+}
+
+
+.row-10{
+    margin-left:-5px;
+    margin-right:-5px;
+    > div{
+        padding-right:5px;
+        padding-left:5px;
+    }
+    > h1{
+        padding-right:5px;
+        padding-left:5px;
+    }
+}

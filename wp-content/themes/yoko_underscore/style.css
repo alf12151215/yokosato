@@ -4,3 +4,180 @@
   Version: 1.0.0
   Text Domain: gulp-wordpress
 */
+.site-header {
+  width: 100%;
+  margin: 70px 0;
+  float: left; }
+
+h1.site-title {
+  width: 273px;
+  height: auto;
+  float: left;
+  margin: 0; }
+  h1.site-title a:hover {
+    border: none; }
+  h1.site-title img {
+    width: 273px; }
+
+.main-navigation {
+  float: right;
+  padding-top: 15px; }
+  .main-navigation .menu-wrap {
+    float: left; }
+    .main-navigation .menu-wrap ul {
+      margin: 0;
+      padding: 0; }
+      .main-navigation .menu-wrap ul li {
+        float: right;
+        list-style: none;
+        margin-left: 20px;
+        text-transform: uppercase;
+        font-size: 15px;
+        letter-spacing: 2px; }
+
+.menu-line {
+  float: left;
+  width: 1px;
+  height: 20px;
+  background-color: rgba(23, 4, 29, 0.2);
+  margin: 0 -5px 0 12px; }
+
+.current-menu-item {
+  border-bottom: solid 2px rgba(23, 4, 29, 0.2); }
+
+.site-content {
+  clear: both; }
+
+.site-footer {
+  margin-top: 80px;
+  margin-bottom: 80px;
+  font-size: 11px;
+  letter-spacing: 2px;
+  position: absolute;
+  bottom: 0;
+  height: auto; }
+
+.footer_line {
+  width: 40px;
+  height: 1px;
+  margin-bottom: 35px;
+  background-color: rgba(23, 4, 29, 0.2); }
+
+.portfolio-listing {
+  margin-bottom: 10px;
+  position: relative; }
+  .portfolio-listing a.thumb {
+    display: block;
+    float: left;
+    overflow: hidden; }
+    .portfolio-listing a.thumb figure {
+      margin: 0;
+      overflow: hidden;
+      position: relative;
+      text-align: center; }
+      .portfolio-listing a.thumb figure figcaption {
+        background-color: rgba(23, 4, 29, 0.6);
+        color: #FFF;
+        opacity: 0;
+        font-size: 16px;
+        font-size: 1.6rem;
+        letter-spacing: 1px;
+        position: absolute;
+        text-align: center;
+        transition: all 0.25s ease-in-out;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        padding-top: 28%;
+        margin: auto;
+        z-index: 100; }
+      .portfolio-listing a.thumb figure img {
+        width: 100%;
+        height: auto;
+        transition: -webkit-transform 0.25s ease-in-out;
+        transition: transform 0.25s ease-in-out;
+        transition: transform 0.25s ease-in-out, -webkit-transform 0.25s ease-in-out;
+        vertical-align: bottom; }
+    .portfolio-listing a.thumb:hover {
+      border: none; }
+      .portfolio-listing a.thumb:hover figure figcaption {
+        opacity: 1; }
+      .portfolio-listing a.thumb:hover figure img {
+        transform: scale(1.15, 1.15);
+        -webkit-transform: scale(1.15, 1.15);
+        -moz-transform: scale(1.15, 1.15);
+        -ms-transform: scale(1.15, 1.15);
+        -o-transform: scale(1.15, 1.15); }
+
+.archive-title {
+  text-transform: uppercase;
+  font-size: 13px;
+  letter-spacing: 1px; }
+
+.portfolio-content-area {
+  text-align: center; }
+  .portfolio-content-area .img-responsive {
+    margin: 0 auto; }
+
+h1.entry-title {
+  font-size: 17px;
+  font-weight: normal;
+  letter-spacing: 1px;
+  margin-top: 70px; }
+
+.portfolio-caption {
+  font-size: 11px;
+  letter-spacing: 1px;
+  margin: 10px 0 60px 0;
+  line-height: 1.7; }
+
+.story_listings {
+  list-style: none;
+  text-align: center;
+  margin: 0;
+  padding: 0; }
+  .story_listings li {
+    margin-bottom: 40px; }
+
+.single-footer {
+  list-style: none;
+  padding: 0;
+  margin: 100px 0 0; }
+  .single-footer li {
+    font-size: 15px;
+    margin-bottom: 20px;
+    letter-spacing: 1px; }
+
+.post-66 .entry-content, .post-68 .entry-content {
+  font-size: 18px;
+  line-height: 1.6;
+  max-width: 600px; }
+
+html {
+  position: relative;
+  min-height: 100%; }
+
+body {
+  font-family: 'Montserrat', sans-serif;
+  margin-bottom: 160px; }
+
+a {
+  color: #222; }
+  a:active, a:focus {
+    text-decoration: none;
+    color: #222; }
+  a:hover {
+    border-bottom: solid 2px rgba(23, 4, 29, 0.2);
+    text-decoration: none;
+    color: #222; }
+
+.row-10 {
+  margin-left: -5px;
+  margin-right: -5px; }
+  .row-10 > div {
+    padding-right: 5px;
+    padding-left: 5px; }
+  .row-10 > h1 {
+    padding-right: 5px;
+    padding-left: 5px; }

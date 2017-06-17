@@ -1,0 +1,41 @@
+.portfolio-content-area {
+  text-align: center;
+  .img-responsive {
+  margin: 0 auto;
+  }
+}
+
+h1.entry-title {
+  font-size: 17px;
+  font-weight: normal;
+  letter-spacing: 1px;
+  margin-top: 70px;
+}
+
+.portfolio-caption {
+  font-size: 11px;
+  letter-spacing: 1px;
+  margin: 10px 0 60px 0;
+  line-height: 1.7;
+}
+
+.story_listings {
+  list-style: none;
+  text-align: center;
+  margin: 0;
+  padding: 0;
+  li {
+    margin-bottom: 40px;
+    }
+  }
+
+.single-footer {
+  list-style: none;
+  padding: 0;
+  margin: 100px 0 0;
+  li {
+    font-size: 15px;
+    margin-bottom: 20px;
+    letter-spacing: 1px;
+  }
+}

@@ -5,23 +5,15 @@ Template Name: Fashion
 ?>
 
 <?php get_header(); ?>
-<?php
-  // get the currently queried taxonomy term, for use later in the template file
-  $term = get_queried_object();
-?>
 
-<header class="archive-header">
-    <h1 class="archive-title">
-        <?php echo $term->name; ?>
-        <?php //post_type_archive_title(); ?>
-    </h1>
-</header><!-- .archive-header -->
+<!-- <header class="archive-header row row-10">
+    <h1 class="archive-title col-md-12"> > Advertising</h1>
+</header> -->
 
 <div id="main-content" class="main-content">
 
     <div id="primary" class="content-area">
         <div id="content" class="site-content" role="main">
-
 
           <?php
           $args = array(
@@ -31,23 +23,36 @@ Template Name: Fashion
           $query = new WP_Query( $args );
 
           if ($query->have_posts()) {
-
-              // output the term name in a heading tag
-              echo'<h2>' . $term->name . '</h2>';
-
               // output the post titles in a list
-              echo '<ul>';
+              echo '<div class="row row-10">';
 
                   // Start the Loop
                   while ( $query->have_posts() ) : $query->the_post(); ?>
 
-                  <li class="animal-listing" id="post-<?php the_ID(); ?>">
-                      <a href="<?php the_permalink(); ?>"><?php the_title(); ?></a>
-                  </li>
+                  <div class="portfolio-listing col-md-4" id="post-<?php the_ID(); ?>">
+                    <a href="<?php the_permalink(); ?>" class="thumb">
+                      <figure>
+                        <figcaption><?php the_title(); ?></figcaption>
+                        <?php
+                          $image = get_field('top_image');
+                          $url = $image['url'];
+                          $title = $image['title'];
+                          $alt = $image['alt'];
+                          $caption = $image['caption'];
+                          $size = 'thumbnail';
+                          $thumb = $image['sizes'][ $size ];
+                          $width = $image['sizes'][ $size . '-width' ];
+                          $height = $image['sizes'][ $size . '-height' ];
+                          if( !empty($image) ): ?>
+                            <img class="lazy img-responsive responsive--full wp-post-image" data-original="<?php echo $thumb; ?>" src="<?php bloginfo('template_directory'); ?>/img/dammy.png" height="100" width="100" />
+                        <?php endif; ?>
+                    </figure>
+                    </a>
+                  </div>
 
                   <?php endwhile;
 
-                  echo '</ul>';
+                  echo '</div>';
 
           } // end of check for query having posts
 

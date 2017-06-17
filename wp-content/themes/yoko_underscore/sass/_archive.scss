@@ -1,0 +1,62 @@
+.portfolio-listing {
+  margin-bottom: 10px;
+  position: relative;
+  a.thumb{
+   display: block;
+   float: left;
+   overflow: hidden;
+   figure {
+     margin: 0;
+     overflow: hidden;
+     position: relative;
+     text-align: center;
+     figcaption {
+       background-color: rgba(23,4,29,0.6);
+       color: #FFF;
+       opacity: 0;
+       font-size: 16px;
+       font-size: 1.6rem;
+       letter-spacing: 1px;
+       position: absolute;
+       text-align: center;
+       -webkit-transition:all 0.25s ease-in-out;
+           transition:all 0.25s ease-in-out;
+       top: 0;
+       left: 0;
+       right: 0;
+       bottom: 0;
+       padding-top: 28%;
+       margin: auto;
+       z-index: 100;
+     }
+     img {
+       width: 100%;
+       height: auto;
+       -webkit-transition:transform 0.25s ease-in-out;
+       transition:transform 0.25s ease-in-out;
+       vertical-align: bottom;
+     }
+   }
+   &:hover {
+     border: none;
+     figure {
+         figcaption{
+           opacity: 1;
+         }
+        img {
+          transform: scale(1.15,1.15);
+          -webkit-transform:scale(1.15,1.15);
+          -moz-transform:scale(1.15,1.15);
+          -ms-transform:scale(1.15,1.15);
+          -o-transform:scale(1.15,1.15);
+        }
+      }
+    }
+  }
+}
+
+.archive-title {
+  text-transform: uppercase;
+  font-size: 13px;
+  letter-spacing: 1px;
+}
